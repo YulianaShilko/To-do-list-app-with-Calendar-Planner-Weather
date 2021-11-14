@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300;0,400;0,500;1,500;1,600&family=Rampart+One&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/7146731ce6.js"></script>
+    <link href="https://use.fontawesome.com/7146731ce6.css" media="all" rel="stylesheet">
+    <title>Calendar</title>
+</head>
+<body class="body">
+    <div class="container">
+        <div class="calendar">
+            <section class="calendar__config config">
+                <div class="config__visible" id="config__visible">
+                </div>
+                <div class="config__invisible">
+                    <label for="startDay" class="config__description">The week would started with ... </label>
+                    <select id="startDay" class="config__startDay" name="startDay">
+                        <option value="Mon" >monday</option>
+                        <option value="Sun" selected="selected">sunday</option>
+                    </select>
+                    <label for="startDayOff" class="config__description">Check the days-off ...</label>
+                    <select id="startDayOff" class="config__day-off" name="startDay">
+                        <option value="Mon-Thu">monday-thuesday</option>
+                        <option value="Sat-Sun" selected="selected">saturday-sunday</option>
+                    </select>
+                    <button id="btnChange" class="config__changeVisability" type="button" data-trigger="false"
+                        data-text="To hide another month data">To hide another month data</button>
+                    <div class="scheduler">
+                        <label for="scheduler">Turn on the scheduler ...</label>    
+                        <input type="checkbox" id="scheduler" name="scheduler" class="scheduler__turn" checked="checked">
+                    </div>
+                    <p id="scheduler__clarification" class="scheduler__clarification">... press data to write Todo List</p>
+                    <div class="weather">
+                        <label for="weather">Show the weather ...</label>    
+                        <input type="checkbox" id="weather" name="weather" class="weather__turn">
+                    </div>
+                    <p id="weather__clarification" class="weather__clarification_none">... mouse on data to show</p>
+                </div>
+            </section>
+            <div class="calendar__buttons buttons">
+                <button id="btnPrev" class="buttons__previousMonth" type="button"><i class="fa fa-angle-double-left" aria-hidden="true"></i>Prev</button>
+                <button id="btnNext" class="buttons__nextMonth" type="button">Next<i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+            </div>
+            <section id="calendarApp" class="calendar__app app">
+                <div id="divCal1" class="app__table days">
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="bundle.js" async></script>         
+</body>
+</html>
+
+
+           

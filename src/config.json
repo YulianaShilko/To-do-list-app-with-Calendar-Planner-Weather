@@ -1,0 +1,20 @@
+{
+    "8 march":  { "day": 8,
+                "month": 3
+                },
+    "new year": { "day": 31,
+                  "month": 12
+                },
+    "1 september": { "day": 1,
+                     "month": 9
+                   }, 
+    "Independence Day":  { "day": 3,
+                           "month": 7
+                        }, 
+    "Labour Day":  { "day": 1,
+                     "month": 5
+                   }, 
+    "The October Revolution Day":  { "day": 7,
+                                     "month": 11
+                                   }                      
+}

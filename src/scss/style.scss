@@ -1,0 +1,340 @@
+@import './variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; 
+}
+
+@mixin my-body-mixin($url) {
+    background: repeat ($url);
+} 
+
+.body {
+    padding: 2em;
+   @include  my-body-mixin(url(https://klv-oboi.by/img/gallery/56/thumbs/25289-730.jpg)); 
+}
+
+.container {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.config{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid $main-style-color;
+    border-radius:5px;
+    font-family: $f-family;
+
+    &__cog {
+        width: 62px;     
+        margin-top: 16px;
+    }
+
+    &__visible {
+        position: inherit;
+        width: 50px;
+    }
+
+    &__invisible {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__startDay {
+        background-color: transparent;
+        color: rgb(55, 53, 53);
+    }
+
+    &__day-off {
+        background-color: transparent;
+        color: rgb(63, 62, 62);
+    }
+
+    &__description {
+        margin-top: 10px;
+    }
+    
+    &__changeVisability {
+        height: 20px;
+        margin-top: 14px;
+        margin-bottom: 11px;
+        font-size: 10px;
+        background-color: $main-style-color;
+        color: white;
+        border: none;
+
+        &:hover{
+            font-weight: bold;
+            cursor: pointer;
+            -webkit-transform: scale(1.05);
+                    transform: scale(1.05);
+        }
+    }
+}
+.scheduler {
+    display: flex;
+
+    &__turn {
+        margin-top: 4px;
+        margin-left: 10px;
+    }
+
+    &__clarification {
+        display: block;
+
+        &_none {
+            display: none;
+        }
+    }
+}
+.weather {
+    display: flex;
+
+    &__turn {
+        margin-top: 4px;
+        margin-left: 10px;
+    }
+
+    &__clarification {
+        display: block;
+
+        &_none {
+            display: none;
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-evenly;
+    margin-top: 35px;
+
+    &__months {
+        margin-bottom:20px;
+        background:transparent;
+        border:none;
+        outline:none;
+        font-size:1em;
+        color: black;
+        cursor:pointer;
+        text-transform:uppercase;
+        transition:all 0.3s ease;
+    }
+
+    &__previousMonth {
+        @extend .buttons__months;
+
+        &:hover {
+            color: purple;
+            font-weight:bold;
+        }
+    }
+
+    &__nextMonth {
+        @extend .buttons__months;
+
+        &:hover {
+            color: purple;
+            font-weight:bold;
+        }
+    }
+}
+.fa-angle-double-right {
+    margin-left: 10px;
+}
+
+.fa-angle-double-left {
+    margin-right: 10px;
+}
+
+.days {
+    height: 240px;
+    padding-bottom: 20px;
+
+    &__basic {
+        height:20px;
+        width:$default-width / 7;
+        text-align:center;
+        vertical-align:middle;
+    }
+
+    &__wrapper{
+        width:100%;
+        border-radius:3px;
+        border-collapse:collapse;
+    }
+
+    &__header {
+        height: 50px;
+        text-align: center;
+        border:none;
+        color:black;
+        text-transform:uppercase;
+        font-size:1.5em;
+        font-family: $f-family1;
+    }
+
+    &__today {
+        @extend .days__basic;
+        color: black;
+        font-weight:bold;  
+        font-size:1.5em;
+        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+            -webkit-transform: scale(1.40);
+                    transform: scale(1.40);
+        }
+    }
+
+    &__transparent {
+        @extend .days__basic;
+        color: transparent;
+    }
+
+    &__names {
+        @extend .days__basic;
+        color: black;
+        font-weight:bold; 
+        font-family: $f-family1;
+    }
+
+    &__normal {
+        @extend .days__basic;
+        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+            -webkit-transform: scale(1.40);
+                    transform: scale(1.40);
+        }
+    }
+
+    &__not-current {
+        @extend .days__basic;
+        color: $notcurrent-color;
+    }
+
+    &__day-off {
+        @extend .days__basic;
+        font-weight:700;
+        color: $main-style-color;
+        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+            -webkit-transform: scale(1.40);
+                    transform: scale(1.40);
+        }
+    }
+
+    &__holidays {
+        @extend .days__basic;
+        font-weight:700;
+        color: $holiday-color;
+        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+            -webkit-transform: scale(1.40);
+                    transform: scale(1.40);
+        }
+    }
+}
+
+.todo {
+    border: 2px solid $main-style-color;
+    border-radius:5px;
+
+    &__header {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 16px;
+        font-weight:bold;
+    }
+
+    &__form {
+        margin-top: 5px;
+        margin-bottom: 12px;
+
+        .form__add-todo {
+            width: 44px;
+            height: 20px;
+            margin-top: 24px;
+            margin-left: 10px;
+            border: none;
+            background: $main-style-color;
+            color: white;
+            font-size: 10px;
+        }
+        .form__input-todo {
+            width: 77%;
+            padding-left: 10px;
+            padding-bottom: 3px;
+            background: transparent;
+        }
+    }
+
+    &__list {
+        padding-left: 20px;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+        TEXT-ALIGN: center;
+        list-style-type: none;
+
+        &_done {
+            background-color: rgb(90, 140, 90);
+        }
+
+        .button__done-todo {
+            width: 13px;
+            height: 13px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: green;
+
+            &:hover {
+                font-weight: bold;
+                cursor: pointer;
+                -webkit-transform: scale(1.05);
+                        transform: scale(1.05);
+            }
+        }
+
+        .button__delete-todo {
+            width: 13px;
+            height: 13px;
+            border: none;
+            border-radius: 20px;
+            background-color: red;
+
+            :hover {
+                font-weight: bold;
+                cursor: pointer;
+                -webkit-transform: scale(1.05);
+                        transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.weather-item{
+    position: fixed;
+    padding: 10px 20px;
+    border: 1px solid #b3c9ce;
+    border-radius: 4px;
+    text-align: center;
+    font: italic 14px/1.3 sans-serif;
+    color: #333;
+    background: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
